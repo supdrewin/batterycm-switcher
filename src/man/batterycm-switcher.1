@@ -1,0 +1,114 @@
+.TH BATTERYCM-SWITCHER 1 "2021-08-23" "1.0.0" "User Commands"
+.SH NAME
+batterycm-switcher \- an advanced Ideapad Laptops conservation mode adjustment tool
+.SH SYNOPSIS
+.B batterycm-switcher
+[
+\fIOPTION\fR
+]
+.SH DESCRIPTION
+This manual page documents briefly the
+\fBbatterycm-switcher\fP
+command.
+.br
+.B Batterycm-Switcher
+is a useful commandline utility (CLI) to switch the
+\fIconservation mode\fP
+of
+\fBIdeapad Laptops\fP.
+And it also provides series features to
+\fIadvanced users\fP.
+.SH OPTIONS
+.TP
+.B call
+call the
+\fIfunction key\fP
+receive backend,
+this require
+\fB`acpid`\fP
+and
+\fB'enable_receive_funkey'\fP
+= 1.
+To enable show status using sound,
+it also needed to install
+\fB`espeak`\fP
+and change the config option
+\fB'enable_sound_prompt'\fP
+= 1.
+.TP
+.B config
+Use
+\fB`config`\fP
+to enter config editing,
+the editor used is vim,
+which
+\fBmost powerful\fP.
+You can special your own vimrc to use from the
+\fICUSTOMS\fP
+section.
+.TP
+.B debug
+Use
+\fB`debug`\fP
+to view the log of batterycm-switcher,
+the default loging location is
+\fI'/var/tmp/batterycm-switcher.log'\fP.
+You can change this location from config.
+It's actually depending on config option
+\fB'batterycm_debug_level'\fP
+!= 0.
+To enter the full debug mode,
+change the
+\fB'batterycm_debug_level'\fP
+to 1.
+.TP
+.B on / off
+Both optoins to turn on/off the battery conservation mode.
+.TP
+.B enable / disable
+Both options to enable/disable the systemd service,
+which Batterycm-Switcher Function Key Backend Service.
+An backend service capture the function key opening Lenovo Vantage in Windows,
+the keycode depending on your hardware.
+.TP
+.B help
+This option will jump to show this man page,
+you can also do this:
+.br
+\fB`man batterycm-switcher`\fP,
+which function is same as help.
+.TP
+.B status
+This option to show current status of conservation mode,
+it will return a message whether the mode on/off.
+.TP
+.B version
+This option to show current version of batterycm-switcher,
+program name will be shown as the
+\fIcore module\fP
+name of
+\fBbatterycm-switcher\fP.
+.SH NOTES
+While no options special,
+batterycm will switch the
+\fIconservation mode\fP
+according to current mode.
+If current mode is on,
+turning off,
+otherwise turning on.
+.sp
+Don't reporting it as a bug if you don't have the
+\fB`ideapad_laptop`\fP
+driver.
+Use
+\fB`lsmod | grep ideapad_laptop`\fP
+to have a try,
+\fBno any reasons\fP
+to
+\fBdirectly uninstall\fP
+this utility.
+.SH BUGS
+<https://github.com/supdrewin/batterycm-switcher/issues> 
+.SH AUTHORS
+Supdrewin
+<https://github.com/supdrewin>
