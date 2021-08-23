@@ -1,0 +1,6 @@
+#!/bin/bash
+
+[[ ! -f /tmp/batterycm ]] && xz -cd \
+  /usr/lib/batterycm-switcher/batterycm-switcher \
+  >/tmp/batterycm && chmod 100 /tmp/batterycm
+(( UID == 0 )) && /tmp/batterycm $* || pkexec /tmp/batterycm $*

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=batterycm-switcher
+GenericName=batterycm-switcher
+Comment=Advanced Ideapad conservation mode adjustment tool
+Exec=batterycm-switcher
+Icon=battery
+Terminal=false
+Type=Application
+Categories=
+Keywords=
