@@ -1,0 +1,63 @@
+# Copyright (C) 2021 Supdrewin <https://github.com/supdrewin>
+# This file is part of the batterycm-switcher.
+# The batterycm-switcher is free software: you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# The batterycm-switcher is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+# ------------------------------ DEFAULT ------------------------------ #
+
+# the default vim config file path
+vim_config_path="/etc/batterycm-switcher/vimrc"
+
+# the default path of batterycm-switcher should log into
+batterycm_log_path="/var/tmp/batterycm-switcher.log"
+
+# the default location of conservation_mode to switch
+conservation_mode_path="/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+
+# the default function key to quickly switch conservation mode
+keymapper_listen_event=" 1F649C73-D9C5- 000000d0 00000000"
+
+# ------------------------------ DEFAULT ------------------------------ #
+
+
+# ------------------------------ HACKING ------------------------------ #
+
+# uncomment this line to disable loging
+#batterycm_debug_level=0
+
+# uncomment this line to make all visable
+#batterycm_debug_level=1
+
+# uncomment this line to enable use function key to switch conservation mode
+#enable_receive_funkey=1
+
+# uncomment this line to enable sound prompt
+#enable_voice_prompt=1
+
+# ------------------------------ HACKING ------------------------------ #
+
+
+# ------------------------------ CUSTOMS ------------------------------ #
+
+# custom your vim config path
+#vim_config_path=""
+
+# custom your loging path
+#batterycm_log_path=""
+
+# set your custom path to switch depends on your hardware
+#conservation_mode_path=""
+
+# set anothor if the function key to open 'Lenovo Vantage' is different from you
+#keymapper_listen_event=""
+
+# ------------------------------ CUSTOMS ------------------------------ #
