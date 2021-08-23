@@ -1,0 +1,51 @@
+# Copyright (C) 2021 Supdrewin <https://github.com/supdrewin>
+# This file is part of the batterycm-switcher.
+# The batterycm-switcher is free software: you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# The batterycm-switcher is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+# ------------------------------ HEADER ------------------------------ #
+
+[[ "$H_ADJUSTER_H" ]] && return || H_ADJUSTER_H=1
+
+# ------------------------------ HEADER ------------------------------ #
+
+
+# ------------------------------ H_ADJUSTER_H ------------------------------ #
+
+batterycm.adjuster() {
+  if [[ "$1" ]]; then
+    case $1 in
+      on)     echo 1 >$conservation_mode_path ;;
+      off)    echo 0 >$conservation_mode_path ;;
+      status) adjuster.put_current_mode v ;;
+      *)      batterycm.debugger "batterycm.adjuster :: The option to be read is invalid :(" ;;
+    esac
+    else batterycm.adjuster $(adjuster.mode_to_change) && sleep 1 && adjuster.put_current_mode s
+  fi
+}
+
+adjuster.mode_to_change() {
+  case $(cat $conservation_mode_path) in
+    0) echo on ;;
+    1) echo off ;;
+  esac
+}
+
+adjuster.put_current_mode() {
+  case $(cat $conservation_mode_path) in
+    0) batterycm.debugger "Currently conservation mode is turn off :)" "$1" "battery is charging" ;;
+    1) batterycm.debugger "Currently conservation mode is turn on :)" "$1" "battery is no charging" ;;
+    *) batterycm.debugger "adjuster.put_current_mode :: Failed to read current conservation mode :(" ;;
+  esac
+}
+
+# ------------------------------ H_ADJUSTER_H ------------------------------ #
