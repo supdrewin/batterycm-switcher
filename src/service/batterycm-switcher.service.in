@@ -1,0 +1,14 @@
+[Unit]
+Description=Batterycm-Switcher Function Key Backend Service
+Documentation=man:batterycm-switcher(1)
+After=acpid.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/batterycm-switcher call
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
