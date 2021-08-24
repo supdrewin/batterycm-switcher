@@ -20,6 +20,12 @@ vim_config_path="/etc/batterycm-switcher/vimrc"
 # the default path of batterycm-switcher should log into
 batterycm_log_path="/var/tmp/batterycm-switcher.log"
 
+# the default battery path to use
+config_battery_path="/sys/class/power_supply/BAT1"
+
+# the default threshold value for charging
+config_charging_threshold=95
+
 # the default location of conservation_mode to switch
 conservation_mode_path="/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 
@@ -53,6 +59,12 @@ keymapper_listen_event=" 1F649C73-D9C5- 000000d0 00000000"
 
 # custom your loging path
 #batterycm_log_path=""
+
+# set your own battery path to use
+#config_battery_path=""
+
+# custom the threshold value for charging
+#config_charging_threshold=
 
 # set your custom path to switch depends on your hardware
 #conservation_mode_path=""
