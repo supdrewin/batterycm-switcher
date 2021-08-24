@@ -44,6 +44,7 @@ After install this utility, type `batterycm-switcher help` to get more informati
 ### Some special features of this utility
 - [x] supports running in tmpfs
 - [x] secure environment for runtime
+- [x] supports charging threshold _(optional)_
 - [x] function key to switch mode _(optional: require acpid)_
 - [x] voice for mode switching _(optional: require espeak)_
 ### Help to improve this utility
