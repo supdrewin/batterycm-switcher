@@ -1,0 +1,13 @@
+[Unit]
+Description=Batterycm-Charger Threshold Backend Service
+Documentation=man:batterycm-switcher(1)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/batterycm-charger
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
