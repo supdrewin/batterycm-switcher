@@ -1,4 +1,4 @@
-.TH BATTERYCM-SWITCHER 1 "2021-08-23" "1.0.0" "User Commands"
+.TH BATTERYCM-SWITCHER 1 "2021-08-24" "1.1.1" "User Commands"
 .SH NAME
 batterycm-switcher \- an advanced Ideapad Laptops conservation mode adjustment tool
 .SH SYNOPSIS
@@ -65,6 +65,19 @@ to 1.
 .B on / off
 Both optoins to turn on/off the battery conservation mode.
 .TP
+.B auto / noauto
+Both options to enable/disable the
+\fBCharging Threshold\fP
+service,
+the default threshold value is
+\fI95%\fP.
+To custom the value,
+use
+\fB`batterycm-switcher config`\fP
+and go to the
+\fICUSTOMS\fP
+section.
+.TP
 .B enable / disable
 Both options to enable/disable the systemd service,
 which Batterycm-Switcher Function Key Backend Service.
@@ -96,6 +109,16 @@ according to current mode.
 If current mode is on,
 turning off,
 otherwise turning on.
+.sp
+It's necessary to know that
+\fB`batterycm-charger.service`\fP
+is conflict with
+\fB`batterycm-switcher.service`\fP
+and other commands.
+So I highly
+\fBNOT\fP
+recommend use both
+\fIat the same time\fP.
 .sp
 Don't reporting it as a bug if you don't have the
 \fB`ideapad_laptop`\fP
