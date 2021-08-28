@@ -73,3 +73,16 @@ keymapper_listen_event=" 1F649C73-D9C5- 000000d0 00000000"
 #keymapper_listen_event=""
 
 # ------------------------------ CUSTOMS ------------------------------ #
+
+# ------------------------------ SPECIAL ------------------------------ #
+
+# where the huawei_wmi should be found
+huawei_wmi_path="/sys/bus/platform/drivers/huawei-wmi/huawei-wmi"
+
+# the default capacity to start charging
+huawei_wmi_min=20
+
+# the default capacity to stop charging
+huawei_wmi_max=80
+
+# ------------------------------ SPECIAL ------------------------------ #
