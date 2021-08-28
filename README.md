@@ -3,7 +3,7 @@ _an advanced Ideapad Laptops conservation mode adjustment tool_
 ### What is the **conservation mode**?
 > Conservation mode is a battery protected mode in most Lenovo Ideapad Laptops. This mode work for disconnecting battery from your computer when AC power adapter is using. That mean battery overcharging can be avoid directly so that purging AC power adapter is unnecessary.
 ### How to setup batterycm-switcher?
-- <details open>
+- <details>
   <summary> Required dependencies for this utility </summary>
 
   - bash: for running shell script
@@ -39,14 +39,15 @@ _an advanced Ideapad Laptops conservation mode adjustment tool_
     make
     sudo make install
     ```
+- For preview features, also see the branch `testing`.
 ### How to use batterycm-switcher?
 After install this utility, type `batterycm-switcher help` to get more information for using batterycm-switcher.
 ### Some special features of this utility
 - [x] supports running in tmpfs
 - [x] secure environment for runtime
-- [x] supports charging threshold _(optional)_
-- [x] function key to switch mode _(optional: require acpid)_
+- [x] supports charging threshold _([optional](# "this feature also available for huawei users"))_
 - [x] voice for mode switching _(optional: require espeak)_
+- [x] function key to switch mode _(optional: require acpid)_
 ### Help to improve this utility
 * Click [here](https://github.com/supdrewin/conservation_mode/issues) to report issues
 * Click [here](https://github.com/supdrewin/conservation_mode/pulls) to pull requests
