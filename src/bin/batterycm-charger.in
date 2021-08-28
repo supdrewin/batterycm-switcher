@@ -1,6 +1,11 @@
 #!/bin/bash
 
+(( UID != 0 )) && pkexec=pkexec
 [[ ! -f /tmp/batterycm ]] && xz -cd \
   /usr/lib/batterycm-switcher/batterycm-switcher \
   >/tmp/batterycm && chmod 100 /tmp/batterycm
-(( UID == 0 )) && /tmp/batterycm norun || :
+[[ "$1" =~ ^[0-9]{1,2}$ && "$2" =~ ^[0-9]{1,2}$ && "$1" -le "$2" ]] \
+  && huawei_wmi_min=$1 && huawei_wmi_max=$2 \
+  && $pkexec /tmp/batterycm charger.huawei_wmi
+[[ ! $(lsmod | grep ideapad_laptop) ]] && exit 1
+$pkexec /tmp/batterycm batterycm.charger || :

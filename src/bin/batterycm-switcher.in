@@ -1,6 +1,8 @@
 #!/bin/bash
 
+[[ ! $(lsmod | grep ideapad_laptop) ]] && exit 1
+(( UID != 0 )) && pkexec=pkexec
 [[ ! -f /tmp/batterycm ]] && xz -cd \
   /usr/lib/batterycm-switcher/batterycm-switcher \
   >/tmp/batterycm && chmod 100 /tmp/batterycm
-(( UID == 0 )) && /tmp/batterycm $* || pkexec /tmp/batterycm $*
+$pkexec /tmp/batterycm $* || :
