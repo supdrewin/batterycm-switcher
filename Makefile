@@ -9,11 +9,12 @@ all:
 	@xz -c src/lib/debugger.lib.in >build/lib/debugger.lib
 	@xz -c src/lib/keymapper.lib.in >build/lib/keymapper.lib
 	@xz -c src/lib/main.sh >build/lib/batterycm-switcher
+	@gzip -c src/man/batterycm-charger.1 >build/man/batterycm-charger.1.gz
 	@gzip -c src/man/batterycm-switcher.1 >build/man/batterycm-switcher.1.gz
 
 install:
 	@install -Dm644 build/lib/* -t $(DESTDIR)$(PREFIX)/lib/batterycm-switcher
-	@install -Dm644 build/man/batterycm-switcher.1.gz -t $(DESTDIR)$(PREFIX)/share/man/man1
+	@install -Dm644 build/man/* -t $(DESTDIR)$(PREFIX)/share/man/man1
 	@install -Dm644 LICENSE -t $(DESTDIR)$(PREFIX)/share/licenses/batterycm-switcher
 	@install -Dm644 src/desktop/org.freedesktop.batterycm-switcher.desktop.in $(DESTDIR)$(PREFIX)/share/applications/org.freedesktop.batterycm-switcher.desktop
 	@install -Dm644 src/etc/default.conf.in $(DESTDIR)/etc/batterycm-switcher/batterycm.conf
@@ -30,6 +31,7 @@ uninstall:
 	@rm -f $(DESTDIR)$(PREFIX)/lib/systemd/system/batterycm-charger.service
 	@rm -f $(DESTDIR)$(PREFIX)/lib/systemd/system/batterycm-switcher.service
 	@rm -f $(DESTDIR)$(PREFIX)/share/applications/org.freedesktop.batterycm-switcher.desktop
+	@rm -f $(DESTDIR)$(PREFIX)/share/man/man1/batterycm-charger.1.gz
 	@rm -f $(DESTDIR)$(PREFIX)/share/man/man1/batterycm-switcher.1.gz
 	@rm -f $(DESTDIR)$(PREFIX)/share/polkit-1/actions/org.freedesktop.batterycm-switcher.policy
 	@rm -rf $(DESTDIR)$(PREFIX)/lib/batterycm-switcher
