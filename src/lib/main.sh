@@ -30,10 +30,9 @@ if [[ "$1" ]]; then
       enable)    systemctl enable --now batterycm-switcher ;;
       help)      man batterycm-switcher ;;
       noauto)    systemctl disable --now batterycm-charger ;;
-      norun)     batterycm.charger ;;
       status|o*) batterycm.adjuster $1 ;;
-      version)   echo ${0##*\/} 1.1.1 ;;
-      *) batterycm.debugger "batterycm.main :: Fail to change mode under invalid option :(" v ;;
+      version)   echo ${0##*\/} 1.2.0 ;;
+      *)         $1 || batterycm.debugger "batterycm.main :: Fail to change mode under invalid option :(" v ;;
     esac
     else batterycm.debugger "batterycm.main :: Invalid option '$2', more than 1 option will not work :(" v
   fi

@@ -29,4 +29,12 @@ batterycm.charger() {
   done
 }
 
+charger.huawei_wmi() {
+  [[ ! $(lsmod | grep huawei_wmi) ||
+    ! $huawei_wmi_min =~ ^[0-9]{1,2}$ ||
+    ! $huawei_wmi_max =~ ^[0-9]{1,2}$ ]] && return
+  echo "$huawei_wmi_min" "$huawei_wmi_max" \
+    >"$huawei_wmi_path"/charge_control_thresholds
+}
+
 # ------------------------------ H_CHARGER_H ------------------------------ #
