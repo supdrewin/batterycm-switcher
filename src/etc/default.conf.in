@@ -21,7 +21,7 @@ vim_config_path="/etc/batterycm-switcher/vimrc"
 config_editor_path="vim"
 
 # the default editor args to use
-config_editor_args="-u '$vim_config_path'"
+config_editor_args="-u "$vim_config_path""
 
 # the default path of batterycm-switcher should log into
 batterycm_log_path="/var/tmp/batterycm-switcher.log"
