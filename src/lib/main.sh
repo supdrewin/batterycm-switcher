@@ -24,7 +24,7 @@ if [[ "$1" ]]; then
     case $1 in
       auto)      systemctl enable --now batterycm-charger ;;
       call)      batterycm.keymapper ;;
-      config)    vim -u "$vim_config_path" /etc/batterycm-switcher/batterycm.conf ;;
+      config)    "$config_editor_path" "$config_editor_args" /etc/batterycm-switcher/batterycm.conf ;;
       debug)     less $batterycm_log_path ;;
       disable)   systemctl disable --now batterycm-switcher ;;
       enable)    systemctl enable --now batterycm-switcher ;;
