@@ -49,5 +49,5 @@ After install this utility, type `batterycm-switcher help` to get more informati
 - [x] voice for mode switching _(optional: require espeak)_
 - [x] function key to switch mode _(optional: require acpid)_
 ### Help to improve this utility
-* Click [here](https://github.com/supdrewin/conservation_mode/issues) to report issues
-* Click [here](https://github.com/supdrewin/conservation_mode/pulls) to pull requests
+* Click [here](https://github.com/supdrewin/batterycm-switcher/issues) to report issues
+* Click [here](https://github.com/supdrewin/batterycm-switcher/pulls) to pull requests
